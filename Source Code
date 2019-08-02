@@ -1,0 +1,33 @@
+// Check how many times a letter appears in a word
+//Uses alphabet 
+//resources: https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
+//Time O(26*n), whee 26 are the alphabet letters & n is the length of the user input (word) 
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+ string input;
+ cout<<"Enter the string"<<endl;
+ cin>>input;
+ 
+ //Loop through alphabet (This is quite clever, wasn't aware of such "trick")
+ for(char c = 'a'; c<='z'; c++){
+     int frequency = 0;
+     
+      //loop through word
+      for(int i = 0; i < input.size();i ++){
+          
+          if(input[i]==c){
+              
+              frequency++;
+              }
+              //This saves memory, given you don't have to create an array to hold resutl, just print automatically
+              cout<<c<<" "<< frequency <<endl;
+          }
+     
+     }
+ 
+}
